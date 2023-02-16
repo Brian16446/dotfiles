@@ -1,0 +1,8 @@
+local status_ok, _ = pcall(require, "lspconfig")
+if not status_ok then
+  return
+end
+
+require("brian.lsp.mason")
+require("brian.lsp.handlers").setup()
+require("brian.lsp.null-ls")
