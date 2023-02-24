@@ -1,4 +1,3 @@
-vim.keymap.set("n", "<leader>pv", "<cmd>:Ex<CR>")
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
@@ -9,8 +8,11 @@ vim.keymap.set("n", "<leader>e", "<:NvimTreeToggle<cr>", opts)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- center screen on up and down.
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- center screen on search navigation
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -42,3 +44,15 @@ vim.keymap.set("n", "<C-s>", ":w<CR>")
 
 -- basic bitch new split.
 vim.keymap.set("n", "<C-n>", ":vsplit<CR>")
+
+-- don't get too mad.
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- f1 find in file. telescope fg does project grep
+vim.keymap.set('n', '<F1>', ':SearchBoxIncSearch<CR>')
+
+-- f2 to find and replace on current word. leader r was slow af for some reason...
+vim.keymap.set('n', '<F2>', function()
+  local word = vim.fn.expand('<cword>')
+  vim.cmd('SearchBoxReplace ' .. vim.fn.escape(word, '/'))
+end, { noremap = true, silent = true })
