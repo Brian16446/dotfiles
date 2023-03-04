@@ -28,6 +28,7 @@ plugins=(git z)
 set bell-style none
 
 source $ZSH/oh-my-zsh.sh
+tmux source-file ~/.tmux.conf
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
