@@ -1,0 +1,61 @@
+# Windows Alacritty Configuration
+
+# Font Configuration
+font:
+  # Specify the FiraCode Nerd Font
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
+  italic:
+    family: FiraCode Nerd Font
+    style: Italic
+  bold_italic:
+    family: FiraCode Nerd Font
+    style: Bold Italic
+  # Enable ligatures
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 1
+
+# Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x1e2127'
+    foreground: '0xd3d3d3'
+
+  # Normal colors
+  normal:
+    black:   '0x1e2127'
+    red:     '0xff5c57'
+    green:   '0x5af78e'
+    yellow:  '0xf3f99d'
+    blue:    '0x57c7ff'
+    magenta: '0xff6ac1'
+    cyan:    '0x9aedfe'
+    white:   '0xf1f1f0'
+
+  # Bright colors
+  bright:
+    black:   '0x666666'
+    red:     '0xff5c57'
+    green:   '0x5af78e'
+    yellow:  '0xf3f99d'
+    blue:    '0x57c7ff'
+    magenta: '0xff6ac1'
+    cyan:    '0x9aedfe'
+    white:   '0xf1f1f0'
+
+# Catppuccin Theme Import
+import:
+  - C:/Users/bb0418/AppData/Roaming/alacritty/catpuccin-mocha.yml
+
+# Shell
+shell:
+ program: wsl ~
