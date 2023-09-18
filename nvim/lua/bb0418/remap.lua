@@ -16,10 +16,14 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "C-p", "\"_dP")
-vim.keymap.set("n", "<leader>p", ":put *<cr>")
+vim.keymap.set("n", "<C-p>", "\"_dP")
+vim.keymap.set("v", "<C-p>", "\"_dP")
 
+-- vim.keymap.set("n", "<leader>p", ":put *<cr>")
+vim.keymap.set("n", "<leader>p", "\"+p")
+vim.keymap.set("n", "<leader>P", "\"+P")
 
+-- vim.keymap.set("n", "C-p", "\"_dP")
 -- allows you to leader y to copy to system clipboard. regular y still copies only to vim.
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")

@@ -18,12 +18,12 @@ null_ls.setup({
 			filetype = { "json", "html", "svelte" },
 		}),
 		--[[ formatting.autopep8.with({}), ]]
-		--[[ formatting.black.with({ extra_args = { "--fast", "--line-lenth 80" } }), ]]
-		--[[ formatting.gofmt, ]]
+		formatting.black.with({ extra_args = { "--fast", "--line-lenth 80" } }),
+		-- formatting.gofmt,
 		-- formatting.yapf,
 		--[[ formatting.stylua, ]]
-		--[[ formatting.rustfmt, ]]
-		--[[ diagnostics.mypy.with({ extra_args = { "--ignore-missing-imports" } }), ]]
+		formatting.rustfmt,
+		diagnostics.mypy.with({ extra_args = { "--ignore-missing-imports"} }),
 		--[[ formatting.latexindent, ]]
 	},
 	on_attach = function(client, bufnr)

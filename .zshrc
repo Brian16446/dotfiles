@@ -14,6 +14,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # aliases
 alias es="exa --icons --color automatic --no-user --no-time  --group-directories-first --no-permissions"
+alias K="kubectl"
 
 function chpwd() {
     emulate -L zsh
@@ -24,7 +25,10 @@ function chpwd() {
 export PATH=$PATH:/home/bb0418/.local/bin
 
 # add plugins.
-plugins=(git z zsh-autosuggestions)
+plugins=(git z zsh-autosuggestions keychain gpg-agent)
+
+zstyle :omz:plugins:keychain agents gpg,ssh
+zstyle :omz:plugins:keychain identities bbid
 
 set bell-style none
 
@@ -34,3 +38,5 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /home/bb0418/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/bb0418/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH

@@ -26,6 +26,12 @@ return require('packer').startup(function(use)
         end,
     }
 
+    use({
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
+    })
+
     -- undo tree
     use('mbbill/undotree')
 
@@ -40,8 +46,15 @@ return require('packer').startup(function(use)
 
     -- nvim tree
     use {
-        'kyazdani42/nvim-web-devicons',
-        requires = 'kyazdani42/nvim-tree.lua'
+         'kyazdani42/nvim-web-devicons',
+         requires = 'kyazdani42/nvim-tree.lua'
+         }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
     }
 
     -- bufferline
@@ -91,6 +104,20 @@ return require('packer').startup(function(use)
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
         config = function()
             require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+
+
+    use({
+        "folke/noice.nvim",
+        requires = {
+            {'MunifTanjim/nui.nvim'},
+            {'rcarriga/nvim-notify'},
+        },
+        config = function()
+            require("noice").setup({
                 -- Configuration here, or leave empty to use defaults
             })
         end
