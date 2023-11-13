@@ -1,3 +1,6 @@
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -28,3 +31,20 @@ vim.opt.sidescrolloff = 8
 vim.opt.clipboard = ""
 
 vim.g.mapleader = " "
+
+-- Enable mouse mode
+vim.o.mouse = 'a'
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
+
+-- Decrease update time
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'

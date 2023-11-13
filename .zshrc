@@ -15,6 +15,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # aliases
 alias es="exa --icons --color automatic --no-user --no-time  --group-directories-first --no-permissions"
 alias K="kubectl"
+alias Z="zellij"
 
 function chpwd() {
     emulate -L zsh
@@ -34,9 +35,16 @@ set bell-style none
 
 source $ZSH/oh-my-zsh.sh
 
+export TERM=xterm-256color
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /home/bb0418/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/bb0418/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
+# export PATH=/usr/local/cuda/bin:/opt/nvidia/nsight-compute/2019.4.0${PATH:+:${PATH}}
+# export LD_LIBRARY_PATH=/usr/local/cuda-11/lib64:/usr/local/cuda/extras/CUPTI/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# export CUDADIR=/usr/local/cuda${CUDADIR:+:${CUDADIR}}
+# export CUDA_HOME=/usr/local/cuda
+export PATH=$PATH:/home/bb0418/.temporalio/bin

@@ -1,8 +1,20 @@
+-- Make line numbers default
+vim.wo.number = true
+
+
+-- split remaps
+vim.keymap.set("n", "<C-x>", ":vsplit<CR>")
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
+
+vim.keymap.set("n", "<leader>e", "<:NvimTreeToggle<cr>")
+
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<find_filescr>")
-vim.keymap.set("n", "<leader>e", "<:NvimTreeToggle<cr>", opts)
 
 -- lets you move blocks of text with J and K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -61,3 +73,21 @@ vim.keymap.set('n', '<F2>', function()
   local word = vim.fn.expand('<cword>')
   vim.cmd('SearchBoxReplace ' .. vim.fn.escape(word, '/'))
 end, { noremap = true, silent = true })
+
+
+
+
+-- Keymaps for better default experience
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>fd', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
